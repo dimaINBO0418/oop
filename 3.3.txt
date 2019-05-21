@@ -1,0 +1,44 @@
+#include <iostream> 
+#include <string> 
+
+using namespace std; 
+
+class avto{ 
+int skorost; 
+int god; 
+string nazvanie; 
+
+public: 
+avto() { 
+god = 0; 
+skorost = 0; 
+nazvanie = "net nazvaniya"; 
+} 
+void set_avto() {
+cout<<"vvedite god vypuska"<<endl;
+cin >> this->god; 
+cout<<"vvedite maksimalnuyu skorost"<<endl;
+cin>>this->skorost ; 
+cout<<"vvedite nazvaniye"<<endl;
+cin>>this->nazvanie ; 
+
+} 
+void get_avto() { 
+cout << god<<endl; 
+cout << skorost <<"km/h"<< endl; 
+cout << nazvanie << endl; 
+
+} 
+
+}; 
+
+int main() 
+{ 
+avto a; 
+a.set_avto(); 
+a.get_avto(); 
+
+
+system("pause"); 
+return 0; 
+}

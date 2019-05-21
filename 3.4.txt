@@ -1,0 +1,52 @@
+#include <iostream> 
+#include <string> 
+#include <cmath> 
+using namespace std; 
+class vector { 
+int x, y; 
+
+public: 
+vector(){ 
+x = 0, y = 0; 
+
+} 
+vector(int x, int y) { 
+this->x = x; 
+this->y = y; 
+} 
+void set_vector() { 
+int x1, y1, x2, y2; 
+cout << "vvedite koordinati tochec" << endl; 
+cout << "x1, y1"; 
+cin >> x1 >> y1; 
+cout<<endl; 
+cout << "x2, y2"; 
+cin >> x2 >> y2; 
+cout << endl; 
+x = x2 - x1; 
+y = y2 - y1; 
+
+} 
+
+double modul() { 
+return sqrt(x*x + y*y); 
+
+
+} 
+
+
+}; 
+
+int main() 
+{ 
+vector a; 
+vector b(3,4); 
+a.set_vector(); 
+cout <<" modul vectora raven "<< a.modul() << endl;; 
+
+
+
+
+system("pause"); 
+return 0; 
+}

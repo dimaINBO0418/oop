@@ -1,0 +1,31 @@
+#include <iostream> 
+#include <string> 
+using namespace std; 
+
+class Students { 
+string *members; 
+int n; 
+public: 
+void makestudents(); 
+void getstudent(); 
+}; 
+void Students::makestudents() { 
+cout << "vvedite kolichestvo studentov" << endl; 
+cin >> n; 
+members = new string[n]; 
+for (int i = 0; i < n; i++){cout<<"vvedite familiyu studenta"<<endl;
+cin >> members[i]; }
+
+} 
+void Students::getstudent() { 
+for (int i = 0; i < n; i++)cout<<"student "<<i+1<<" " << members[i]<< endl; 
+} 
+
+int main() 
+{ 
+Students a; 
+a.makestudents(); 
+a.getstudent(); 
+system("pause"); 
+return 0; 
+}

@@ -1,0 +1,110 @@
+#include <iostream> 
+#include<string> 
+using namespace std; 
+
+class Library { 
+string *book; 
+
+bool *knigi; 
+int n; 
+public : 
+Library(){ 
+cout << "vvedite kolichestvo knig" << endl; 
+cin >> n; 
+book = new string[n+1]; 
+cout << "vvedite knigi" << endl; 
+for (int i = 0; i < n+1; i++) { 
+
+getline(cin, book[i]); 
+
+} 
+knigi = new bool[n + 1]; 
+
+for (int i = 0; i < n + 1; i++) 
+knigi[i] = false; 
+
+
+} 
+~Library() { 
+delete[] book; 
+
+cout << "massiv udalen" << endl; 
+} 
+string get_book(); 
+void vzyat_knigy(); 
+void get_vzyatiye_knigi(); 
+void otdat_knigu(); 
+}; 
+
+
+
+string Library::get_book() 
+{ 
+cout << "vvedite nomer knigi" << endl; 
+int d; 
+cin >> d; 
+return book[d]; 
+} 
+
+void Library::vzyat_knigy() 
+{ 
+
+cout << "vvedite nomera knig kotorye berete(0-finish)" << endl; 
+int k; 
+do { 
+cin >> k; 
+if (k > 0 && k < n + 1)knigi[k] = true; 
+} while (k != 0); 
+
+//for (int i = 0; i < n + 1; i++) 
+//cout « knigi[i] « endl; 
+} 
+
+void Library::get_vzyatiye_knigi() 
+{ 
+int i; 
+cout << "vashi knigi" << endl; 
+for (int i = 0; i < n + 1; i++) 
+if (knigi[i] == true)cout<< book[i]<< endl; 
+} 
+
+void Library::otdat_knigu() 
+{ 
+cout << "vvedite nomera knig kotorye otdaete(0-finish)" << endl; 
+int k; 
+do { 
+cin >> k; 
+if (k > 0 && k < n + 1)knigi[k] = false; 
+} while (k != 0); 
+} 
+
+int main() 
+{ 
+Library a; 
+int z; 
+do { 
+cout << "1-pokazat knigu"<< endl; 
+cout <<"2-vzyat knigu" <<endl; 
+cout <<"3-otdat knigu" << endl; 
+cout <<"4-pokazat moi knigi"<< endl; 
+
+cin >> z; 
+switch (z) 
+{ 
+case 1: cout << a.get_book() << endl; 
+break; 
+case 2: a.vzyat_knigy(); 
+break; 
+case 3: a.otdat_knigu(); 
+break; 
+case 4: a.get_vzyatiye_knigi(); 
+break; 
+default:
+break; 
+} 
+
+
+} while (z != 0); 
+system("pause"); 
+return 0; 
+}
