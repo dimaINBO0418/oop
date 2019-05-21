@@ -1,0 +1,74 @@
+#include <iostream>
+#include<ctime>
+#include <iomanip>
+using namespace std;
+void sort(int *a , int n );
+void sort(double *a , int n );
+int main() {
+	srand(time(0));
+	int n,z;
+	cout<<"vvedite kolichestvo chisel"<<endl;
+	cin >> n;
+	cout<<"kakiye chisla budete vvodit(0-double/1-int)"<<endl;
+	cin>>z;
+	if (z == 0) {
+		double*a = new double[n];
+		for (int i = 0; i < n; i++) {
+		    cout<<" vvedite chislo"<<endl;
+			cin >> a[i];
+		}
+		sort(a, n);
+
+		for (int i = 0; i < n; i++)
+			cout << a[i] << endl;
+	}
+	else {
+		int*a = new int[n];
+		for (int i = 0; i < n; i++) {
+		     cout<<" vvedite chislo"<<endl;
+			cin >> a[i];
+		}
+		sort(a, n);
+
+		for (int i = 0; i < n; i++)
+			cout << a[i] << endl;
+	}
+	system("pause");
+	return 0;
+
+}
+
+void sort(double *a, int n)
+ {
+	long i, j, k;
+	cout<<"idet sortirovka drobnyh chisel"<<endl;
+	double x;
+
+	for (i = 0; i < n; i++) {   	// i - номер текущего шага
+		k = i; x = a[i];
+
+		for (j = i + 1; j < n; j++)	// цикл выбора наименьшего элемента
+			if (a[j] < x) {
+				k = j; x = a[j];	        // k - индекс наименьшего элемента
+			}
+
+		a[k] = a[i]; a[i] = x;   	// меняем местами наименьший с a[i]
+	}
+}
+void sort(int *a, int n)
+{
+	long i, j, k;
+	cout<<"idet sortirovka celyh chisel"<<endl;
+	double x;
+
+	for (i = 0; i < n; i++) {   	// i - номер текущего шага
+		k = i; x = a[i];
+
+		for (j = i + 1; j < n; j++)	// цикл выбора наименьшего элемента
+			if (a[j] < x) {
+				k = j; x = a[j];	        // k - индекс наименьшего элемента
+			}
+
+		a[k] = a[i]; a[i] = x;   	// меняем местами наименьший с a[i]
+	}
+}

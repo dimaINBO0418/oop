@@ -1,0 +1,79 @@
+#include <iostream>
+#include<ctime>
+#include <iomanip>
+using namespace std;
+
+double calc(int a, int b);
+double calc(double a, double b);
+
+int main() {
+	int z;
+	cout << "1-int,2-double" << endl;
+	cin >> z;
+	if (z == 1) {
+		int a , b  ;
+		cout << "vvedite 2 chisla" << endl;
+		cin >> a >> b;
+		cout << calc(a, b) << endl;
+	}
+	else {
+		double a, b;
+		cout << "vvedite 2 chisla" << endl;
+		cin >> a >> b;
+		cout << calc(a, b) << endl;
+	}
+	system("pause");
+	return 0;
+}
+
+double calc(int a, int b)
+{
+	int k;
+	do {
+		cout << "i1+2-3*4/" << endl;
+		cin >> k;
+		switch (k)
+		{
+		case 1:
+			return a + b;
+			break;
+		case 2:
+			return a - b;
+			break;
+		case 3:
+			return a*b;
+			break;
+		case 4: 
+			return a / b;
+		default:
+			break;
+		}
+
+	} while (k != 0);
+}
+
+double calc(double a, double b)
+{
+	int k;
+	do {
+		cout << "d1+2-3*4/" << endl;
+		cin >> k;
+		switch (k)
+		{
+		case 1:
+			return a + b;
+			break;
+		case 2:
+			return a - b;
+			break;
+		case 3:
+			return a*b;
+			break;
+		case 4:
+			return a / b;
+		default:
+			break;
+		}
+
+	} while (k != 0);
+}
