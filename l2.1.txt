@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+double summa(double a, double b) {
+	return a + b;
+}
+
+double proizv(double a, double b) {
+	return a * b;
+}
+
+double raznost(double a, double b) {
+	return a - b;
+}
+double(*p)(double a, double b);
+int main()
+{
+	double a, b;
+	cout << "vvedite a i b" << endl;
+	cin >> a >> b;
+	int z;
+	
+	cout << "1-raznost 2-summa 3-proizvedenie" << endl;
+	cin >> z;
+	switch (z)
+	{
+	case 1: p = raznost;
+		break;
+	case 2: p = summa;
+		break;
+	case 3: p = proizv;
+		break;
+	default:
+		break;
+	}
+
+	cout<<p(a, b)<<endl;
+	system("pause");
+    return 0;
+}

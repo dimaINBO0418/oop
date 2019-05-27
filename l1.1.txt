@@ -1,0 +1,18 @@
+#include "stdafx.h"
+#include "Complex.h"
+#include<string>
+#include<iostream>
+using namespace std;
+class Complex;
+int main()
+{
+	Complex a;
+	Complex b;
+	a.get_Complex();
+	cout << a.plus(b) << endl;
+	cout << a.minus(b) << endl;
+	cout << a.umno(b) << endl;
+	cout << a.razd(b) << endl;
+	system("pause");
+    return 0;
+}
